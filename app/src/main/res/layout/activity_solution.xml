@@ -139,6 +139,7 @@
         android:layout_alignParentBottom="true"
         android:textColor="#ffffff"
         android:text="Get Suggestions"
+        android:onClick="getSuggestions"
         android:backgroundTint="@color/colorAccent"/>
     <!--<ScrollView-->
         <!--android:layout_below="@+id/emotionscard"-->

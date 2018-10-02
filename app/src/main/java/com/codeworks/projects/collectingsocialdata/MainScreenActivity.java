@@ -4,6 +4,8 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -74,6 +76,7 @@ public class MainScreenActivity extends AppCompatActivity {
 
     void init(){
         dialog = new ProgressDialog(this);
+        dialog.setCancelable(false);
         dialog.setMessage(getString(R.string.collect_data_progressdialog_text));
         list = new ArrayList<>();
         twitterCore = TwitterCore.getInstance();
@@ -145,6 +148,9 @@ public class MainScreenActivity extends AppCompatActivity {
                 Toast.makeText(MainScreenActivity.this, "Error", Toast.LENGTH_SHORT).show();
             }
         });
+        if (!checkInternet()){
+            Toast.makeText(this, R.string.check_internet_text, Toast.LENGTH_SHORT).show();
+        }
     }
 
     private boolean checkTwitterLoggedIn() {
@@ -309,6 +315,12 @@ public class MainScreenActivity extends AppCompatActivity {
         if (!checkLoginsAndReturn()){
             Toast.makeText(this, R.string.social_login_alerttext, Toast.LENGTH_SHORT).show();
         }
+    }
+
+    public boolean checkInternet(){
+        ConnectivityManager manager = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
+        NetworkInfo info = manager.getActiveNetworkInfo();
+        return info!=null&&info.isConnected();
     }
 
 }

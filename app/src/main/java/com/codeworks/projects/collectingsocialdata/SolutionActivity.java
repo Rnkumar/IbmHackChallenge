@@ -2,6 +2,7 @@ package com.codeworks.projects.collectingsocialdata;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +10,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,6 +33,8 @@ public class SolutionActivity extends AppCompatActivity {
     ProgressDialog progressDialog;
     TextView nameTextView,resultDataTextView,joy,anger,tentative,fear,sadness,analytical,confident;
     ArrayList<TextView> textViews;
+    String tag="";
+    int max = Integer.MIN_VALUE;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -98,23 +102,27 @@ public class SolutionActivity extends AppCompatActivity {
         nameTextView.setText(name);
     }
 
+    public void getSuggestions(View view) {
+        if (max==Integer.MIN_VALUE)
+            tag = "joy";
+        Intent intent = new Intent(this,SuggestionsActivity.class);
+        intent.putExtra("tag",tag);
+        startActivity(intent);
+    }
+
     class Task extends AsyncTask<String,Void,String> {
 
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
             progressDialog.setMessage("Analyzing Mood");
+            progressDialog.setCancelable(false);
             progressDialog.show();
         }
 
         @Override
         protected String doInBackground(String... strings) {
             ToneAnalysis tone = services.tone(toneOptions).execute();
-            System.out.println("tone"+tone.toString());
-
-           // Log.e("tone",tone.toString());
-
-
             return tone.toString();
         }
 
@@ -132,7 +140,12 @@ public class SolutionActivity extends AppCompatActivity {
                     JSONObject toneElement = tones.getJSONObject(i);
                     String tone_id = toneElement.getString("tone_id");
                     int score = (int)(toneElement.getDouble("score")*100);
+
                     for(int j=0;j<textViews.size();j++){
+                        if (max<score) {
+                            max = score;
+                            tag = tone_id;
+                        }
                         TextView item =  textViews.get(j);
                         if (textViews.get(j).getTag().equals(tone_id)){
                             String textData = tone_id.toUpperCase()+"\n"+score+"%";

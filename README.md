@@ -34,3 +34,23 @@ Common color patterns and sizing is being followed in user interface development
 
 
 
+Demo Video is added in the demo video folder in this repository.
+
+Demo Apk is added in the demo apk folder in this repository.
+
+Screenshots of the app are added in Screenshots folder in this repository.
+
+Presentation is added in the ppt folder in this repository.
+
+
+Screenshots:
+
+
+![alt text](https://github.com/Rnkumar/IbmHackChallenge/Screenshots/1.png)
+
+![alt text](https://github.com/Rnkumar/IbmHackChallenge/Screenshots/2.png)
+
+![alt text](https://github.com/Rnkumar/IbmHackChallenge/Screenshots/3.png)
+
+
+
