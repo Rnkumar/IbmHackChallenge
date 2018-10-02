@@ -45,12 +45,11 @@ Presentation is added in the ppt folder in this repository.
 
 Screenshots:
 
+![Demo 1](https://github.com/Rnkumar/IbmHackChallenge/blob/master/Screenshots/1.png)
 
-![alt text](https://github.com/Rnkumar/IbmHackChallenge/Screenshots/1.png)
+![Demo 2](https://github.com/Rnkumar/IbmHackChallenge/blob/master/Screenshots/2.png)
 
-![alt text](https://github.com/Rnkumar/IbmHackChallenge/Screenshots/2.png)
-
-![alt text](https://github.com/Rnkumar/IbmHackChallenge/Screenshots/3.png)
+![Demo 3](https://github.com/Rnkumar/IbmHackChallenge/blob/master/Screenshots/3.png)
 
 
 
