@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">SocialDataAnalysis</string>
+    <string name="logouttext">Log Out</string>
+    <string name="login_header_text">Login to provide your social posts</string>
+    <string name="mood_btn_text">How is my mood?</string>
+    <string name="collect_data_progressdialog_text">Collecting Social Data!</string>
+    <string name="twitter_login_alert_text">Log in to use Twitter</string>
+    <string name="sharedpreferencename">COLLECT</string>
+    <string name="social_login_alerttext">Login in with social accounts</string>
+    <string name="mood_analysis_title">Mood Analysis Result</string>
+
+
+    <string name="tone_analyser_versiondate"><!--Your tone analyser version date--></string>
+    <string name="tone_analyzer_username"><!--Your tone analyser username--></string>
+    <string name="tone_analyzer_password"><!--Your tone analyser password--></string>
+    <string name="com.twitter.sdk.android.CONSUMER_KEY"><!--Your twitter consumer key--></string>
+    <string name="com.twitter.sdk.android.CONSUMER_SECRET"><!--Your twitter consumer secret--></string>
+    <string name="facebook_app_id"><!--Your facebook App Id--></string>
+    <string name="fb_login_protocol_scheme"><!--Fb login protocol scheme--></string>
+
+</resources>

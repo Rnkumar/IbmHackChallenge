@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="card_elevations">7dp</dimen>
+    <dimen name="bg_card_height">250dp</dimen>
+    <dimen name="card_margin">10dp</dimen>
+    <dimen name="header_text_size">20sp</dimen>
+    <dimen name="fb_button_padding">15dp</dimen>
+    <dimen name="fb_text_size">15sp</dimen>
+    <dimen name="twitter_btn_margin">10dp</dimen>
+    <dimen name="btn_height">60dp</dimen>
+</resources>
